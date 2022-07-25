@@ -309,7 +309,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  return arr.filter(item => typeof item == 'number' && item > 0).length;
+  return arr.filter((item) => typeof item === 'number' && item > 0).length;
 }
 
 /**
@@ -424,8 +424,11 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(arr) {
-  return arr.sort((a, b) => a.country < b.country || (a.country === b.country && a.city < b.city) ? -1 : 1);
+function sortCitiesArray(/* arr */) {
+  // return arr.sort((a, b) => {
+  //   a.country < b.country || (a.country === b.country && a.city < b.city) ? -1 : 1;
+  // });
+  throw new Error('Not implemented');
 }
 
 /**
@@ -446,9 +449,10 @@ function sortCitiesArray(arr) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(n) {
-  const x = Array(n).fill(Array(n).fill(0));
-  return x.map((item1, index1) => item.map((item2, index2) => index1 === index2 ? 1 : 0));
+function getIdentityMatrix(/* n */) {
+  // const x = Array(n).fill(Array(n).fill(0));
+  // return x.map((item1, index1) => item.map((item2, index2) => index1 === index2 ? 1 : 0));
+  throw new Error('Not implemented');
 }
 
 /**
@@ -464,8 +468,9 @@ function getIdentityMatrix(n) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(start, end) {
-  return Array(end - start + 1).fill(start).map((item, index) => item += index);
+function getIntervalArray(/* start, end */) {
+  // return Array(end - start + 1).fill(start).map((item, index) => item += index);
+  throw new Error('Not implemented');
 }
 
 /**
@@ -516,8 +521,8 @@ function distinct(arr) {
 function group(array, keySelector, valueSelector) {
   const result = new Map();
   array.map((item) => {
-    let key = keySelector(item);
-    let value = valueSelector(item);
+    const key = keySelector(item);
+    const value = valueSelector(item);
     if (!result.has(key)) {
       result.set(key, [value]);
     } else {
